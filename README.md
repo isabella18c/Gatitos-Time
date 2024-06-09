@@ -25,14 +25,17 @@ El archivo `index.html` proporciona la estructura básica de la aplicación y vi
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cat Images with Vue.js</title>
+    <title>GATITOS TIME</title>
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        </style>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css"> <!-- Este debe ser después de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
     <div id="app" class="container mt-5">
-        <h1 class="page-title mb-4">Imágenes de Gatos</h1>
+        <h1 class="page-title mb-4">GATITOS TIME</h1>
         <div v-if="loading" class="alert alert-info">Cargando...</div>
         <div v-if="error" class="alert alert-danger">{{ error }}</div>
         <div v-if="catImages.length" class="row">
@@ -49,13 +52,13 @@ El archivo `index.html` proporciona la estructura básica de la aplicación y vi
     <script src="main.js"></script>
 </body>
 </html>
-styles.css
+
+### styles.css
+
 El archivo styles.css contiene los estilos personalizados para la aplicación, incluyendo el diseño de las cartas y la animación de las imágenes:
 
-css
-Copiar código
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
     background-color: #152340; /* Fondo del body */
     margin: 0;
     padding: 20px;
@@ -110,11 +113,10 @@ body {
     margin-top: 10px; /* Margen superior */
     margin-bottom: 10px; /* Margen inferior */
 }
-main.js
+
+### main.js
 El archivo main.js contiene la lógica de Vue.js para consumir la API y actualizar la interfaz de usuario:
 
-javascript
-Copiar código
 new Vue({
     el: '#app',
     data: {
@@ -143,7 +145,10 @@ new Vue({
         }
     }
 });
-Flujo de Trabajo
+
+
+### Flujo de Trabajo
+
 Inicialización del Proyecto: Cuando se carga la página, Vue.js inicializa la aplicación y llama al método fetchCatImages dentro del ciclo de vida created.
 
 Consumo de la API: El método fetchCatImages utiliza fetch para hacer una solicitud GET a la API de TheCatAPI y obtener 10 imágenes de gatos.
