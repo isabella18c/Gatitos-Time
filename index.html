@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GATITOS TIME</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app" class="container ">
+        <h1 class="mb-4 text-center">GATITOS TIME</h1>
+        <div v-if="loading" class="alert alert-info">Cargando...</div>
+        <div v-if="error" class="alert alert-danger">{{ error }}</div>
+        <div v-if="catImages.length" class="row">
+            <div v-for="image in catImages" :key="image.id" class="col-md-4 mb-4">
+                <div class="card h-100 custom-card">
+                    <img :src="image.url" :title="image.id" :alt="image.id" class="card-img-top custom-img">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ image.id }}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
